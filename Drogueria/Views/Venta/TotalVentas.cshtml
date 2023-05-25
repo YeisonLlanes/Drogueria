@@ -1,0 +1,40 @@
+﻿@model VentasModel
+@{
+    ViewData["Title"] = "TotalVentas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card text-center">
+    <div class="card-header">
+        Informacion Adicional de Ventas
+    </div>
+    <form asp-action="TotalVentas" asp-controller="Venta" method="post">
+    <div class="card-body">
+        <div class="mb-3">
+            <h5 class="card-title">Total de Ingresos por ventas de la Drogueria</h5>
+            <input asp-for="total_ventas_drogueria" class="form-control" type="text" aria-label="default input example">
+        </div>
+    </div>
+    <div class="card-footer text-muted">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Producto Mas Vendido</h5>
+                        <input asp-for="productos_mas_vendido" class="form-control" type="text" aria-label="default input example">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Producto Menos Vendido</h5>
+                            <input asp-for="productos_menos_vendido" class="form-control" type="text" aria-label="default input example">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+

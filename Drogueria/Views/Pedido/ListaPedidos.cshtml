@@ -1,0 +1,39 @@
+﻿@model List<PedidosModel>
+@{
+    ViewData["Title"] = "ListaPedidos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        Historial Pedidos Solicitados a Laboratorio
+    </div>
+    <div class="card-body">
+        <a asp-action="CrearPedido" asp-controller="Pedido" class="btn btn-success">Crear Pedido</a>
+        <hr />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Tipo Producto</th>
+                    <th scope="col">Cantidad Solicitada</th>
+                    <th scope="col">Stock Actual En Bodega</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@item.id_pedido</th>
+                        <td>@item.desc_producto</td>
+                        <td>@item.tipo_producto</td>
+                        <td>@item.cantidad</td>
+                        <td>@item.stock_bodega</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

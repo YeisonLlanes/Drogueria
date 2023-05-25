@@ -1,0 +1,39 @@
+﻿@model List<ClientesModel>
+
+@{
+    ViewData["Title"] = "ListaClientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Clientes
+    </div>
+    <div class="card-body">
+        <a asp-action="CrearCliente" asp-controller="Cliente" class="btn btn-success">Crear Cliente</a>
+        <hr />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre Cliente</th>
+                    <th scope="col">Nit Cliente</th>
+                    <th scope="col">Direccion</th>
+                    <th scope="col">Telefono</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@item.id_cliente</th>
+                        <td>@item.Nombre_Cliente</td>
+                        <td>@item.nit_cliente</td>
+                        <td>@item.Direccion</td>
+                        <td>@item.Telefono</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

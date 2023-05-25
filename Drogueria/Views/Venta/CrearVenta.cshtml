@@ -1,0 +1,30 @@
+﻿@model VentasModel
+@{
+    ViewData["Title"] = "CrearVenta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        Crear Nueva Venta
+    </div>
+    <div class="card-body">
+        <form asp-action="CrearVenta" asp-controller="Venta" method="post">
+            <div class="mb-3">
+                <label class="form-label">Producto a Vender:</label>
+                <select asp-items="@ViewData["combo"] as SelectList" asp-for="id_producto"></select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Cliente:</label>
+                <select asp-items="@ViewData["combo2"] as SelectList" asp-for="id_cliente"></select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Cantidad:</label>
+                <input asp-for="cantidad" class="form-control" type="text" placeholder="Cantidad Productos" aria-label="default input example">
+            </div>
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </form>
+    </div>
+</div>
+

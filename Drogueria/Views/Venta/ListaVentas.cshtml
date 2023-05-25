@@ -1,0 +1,48 @@
+﻿@model List<VentasModel>
+@{
+    ViewData["Title"] = "ListaVentas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Historial Ventas Drogueria
+    </div>
+    <div class="card-body">
+        <a asp-action="CrearVenta" asp-controller="Venta" class="btn btn-success">Crear Venta</a>
+        <hr />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Nit Cliente</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Tipo Producto</th>
+                    <th scope="col">Total Unidades Vendido</th>
+                    <th scope="col">Precio Unidad</th>
+                    <th scope="col">Total Vendido</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@item.id_venta</th>
+                        <td>@item.Nombre_Cliente</td>
+                        <td>@item.nit_cliente</td>
+                        <td>@item.desc_producto</td>
+                        <td>@item.tipo_producto</td>
+                        <td>@item.cantidad</td>
+                        <td>@item.precio</td>
+                        <td>@item.total_venta</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,27 @@
+﻿@model PedidosModel
+@{
+    ViewData["Title"] = "CrearPedido";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Crear Cliente
+    </div>
+    <div class="card-body">
+        <form asp-action="CrearPedido" asp-controller="Pedido" method="post">
+            <div class="mb-3">
+                <label class="form-label">Producto a Solicitar:</label>
+                <select asp-items="@ViewData["combo"] as SelectList" asp-for="id_producto" ></select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Cantidad:</label>
+                <input asp-for="cantidad" class="form-control" type="text" placeholder="Cantidad a Solicitar" aria-label="default input example">
+            </div>
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </form>
+    </div>
+</div>
+
+
+

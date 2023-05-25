@@ -1,0 +1,36 @@
+﻿@model ClientesModel
+@{
+    ViewData["Title"] = "CrearCliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        Crear Cliente
+    </div>
+    <div class="card-body">
+        <form asp-action="CrearCliente" asp-controller="Cliente" method="post">
+            <div class="mb-3">
+                <label class="form-label">Nombre:</label>
+                <input asp-for="Nombre_Cliente" class="form-control" type="text" placeholder="Nombre Cliente" aria-label="default input example">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nit:</label>
+                <input asp-for="nit_cliente" class="form-control" type="text" placeholder="Nit" aria-label="default input example">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Direccion:</label>
+                <input asp-for="Direccion" class="form-control" type="text" placeholder="Direccion" aria-label="default input example">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Telefono:</label>
+                <input asp-for="Telefono" class="form-control" type="text" placeholder="Telefono" aria-label="default input example">
+            </div>
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </form>
+    </div>
+</div>
+
+
+
